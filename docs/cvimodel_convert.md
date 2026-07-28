@@ -52,7 +52,7 @@ cp runs/detect/runs/tennis/train2/weights/best.onnx .
 model_transform.py \
   --model_name yolov8n_tennis \
   --model_def best.onnx \
-  --input_shapes [[1,3,640,640]] \
+  --input_shapes [[1,3,480,640]] \
   --mean 0.0,0.0,0.0 \
   --scale 0.0039216,0.0039216,0.0039216 \
   --keep_aspect_ratio \
@@ -88,7 +88,7 @@ model_deploy.py \
 ```
 
 ```
-model_deploy.py --mlir yolov8n_tennis.mlir --quantize INT8 --calibration_table yolov8n_cali_table --quantize_table shape_pattern_qtable --processor cv181x --tolerance 0.85,0.45 --fuse_preprocess --customization_format RGB_PLANAR --model yolov8n_tennis_v2.cvimodel
+model_deploy.py --mlir yolov8n_tennis.mlir --quantize INT8 --calibration_table yolov8n_cali_table --quantize_table shape_pattern_qtable --processor cv181x --tolerance 0.85,0.45 --fuse_preprocess --customization_format RGB_PLANAR --model yolov8n_tennis_v3.cvimodel
 
 ```
 
